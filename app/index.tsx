@@ -1,5 +1,5 @@
 import { router } from 'expo-router';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { ActivityIndicator, Image, StyleSheet, Text, View } from 'react-native';
 
 const takImg = require("../assets/images/LogoTak.png");
@@ -9,7 +9,7 @@ export default function Index() {
         const timer = setTimeout(() => {
             router.replace("/home");
         }, 3000);
-        return () => clearTimeout(timer); // เคลียร์ Timer ป้องกัน Memory Leak
+        return () => clearTimeout(timer);
     }, []);
 
     return (

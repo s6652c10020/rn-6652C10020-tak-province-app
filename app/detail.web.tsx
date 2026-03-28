@@ -7,14 +7,12 @@ import {
     Dimensions,
     Image,
     Linking,
-    Platform,
     ScrollView,
     StyleSheet,
     Text,
     TouchableOpacity,
     View
 } from "react-native";
-import MapView, { Marker } from 'react-native-maps';
 
 const { width } = Dimensions.get('window');
 
@@ -49,22 +47,14 @@ export default function Detail() {
     const openInGoogleMaps = () => {
         const lat = item?.latitude;
         const lng = item?.longtitude || item?.longitude;
-
         if (lat && lng) {
-            const url = Platform.select({
-                ios: `maps:0,0?q=${lat},${lng}`,
-                android: `geo:0,0?q=${lat},${lng}`
-            });
-            if (url) Linking.openURL(url);
+            const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+            Linking.openURL(url);
         }
     };
 
     if (loading) return <View style={styles.center}><ActivityIndicator size="large" color="#2E7D32" /></View>;
     if (!item) return <View style={styles.center}><Text>ไม่พบข้อมูล</Text></View>;
-
-
-    const lat = parseFloat(item.latitude);
-    const lng = parseFloat(item.longtitude || item.longitude);
 
     return (
         <ScrollView style={styles.container}>
@@ -90,21 +80,10 @@ export default function Detail() {
 
                 <View style={styles.section}>
                     <Text style={styles.sectionTitle}>ตำแหน่งที่ตั้ง</Text>
-                    <View style={styles.mapWrapper}>
-                        <MapView
-                            style={styles.map}
-                            initialRegion={{
-                                latitude: lat,
-                                longitude: lng,
-                                latitudeDelta: 0.01,
-                                longitudeDelta: 0.01,
-                            }}
-                        >
-                            <Marker
-                                coordinate={{ latitude: lat, longitude: lng }}
-                                title={item.name}
-                            />
-                        </MapView>
+                    <View style={styles.webPlaceholder}>
+                        <Ionicons name="map-outline" size={40} color="#ccc" />
+                        <Text style={styles.webText}>แผนที่แสดงเฉพาะบนมือถือ</Text>
+                        <Text style={styles.webSubText}>คลิกปุ่มด้านล่างเพื่อดูเส้นทางบน Google Maps</Text>
                     </View>
 
                     <TouchableOpacity style={styles.mapButton} onPress={openInGoogleMaps}>
@@ -129,17 +108,27 @@ export default function Detail() {
 const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: '#fff' },
     center: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-    image: { width: width, height: 300 },
+    image: { width: width > 800 ? 800 : width, height: 400, alignSelf: 'center' },
     placeholderImg: { backgroundColor: '#e0e0e0', justifyContent: 'center', alignItems: 'center' },
-    infoContainer: { padding: 20 },
+    infoContainer: { padding: 20, maxWidth: 800, alignSelf: 'center', width: '100%' },
     name: { fontSize: 24, fontWeight: 'bold', color: '#333', marginBottom: 5 },
     locationRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 15 },
     district: { fontSize: 16, color: '#666', marginLeft: 5 },
     section: { marginBottom: 20 },
     sectionTitle: { fontSize: 18, fontWeight: 'bold', color: '#2E7D32', marginBottom: 10 },
     description: { fontSize: 16, color: '#444', lineHeight: 24 },
-    mapWrapper: { height: 200, borderRadius: 15, overflow: 'hidden', borderWidth: 1, borderColor: '#ddd' },
-    map: { flex: 1 },
+    webPlaceholder: {
+        height: 200,
+        backgroundColor: '#f9f9f9',
+        borderRadius: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: 1,
+        borderColor: '#eee',
+        borderStyle: 'dashed'
+    },
+    webText: { color: '#666', marginTop: 10, fontWeight: 'bold' },
+    webSubText: { color: '#999', fontSize: 12 },
     mapButton: {
         flexDirection: 'row',
         backgroundColor: '#2E7D32',

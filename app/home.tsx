@@ -1,5 +1,4 @@
 import { router } from "expo-router";
-import React from "react";
 import { Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const { width } = Dimensions.get('window');
@@ -15,16 +14,12 @@ const categories = [
 export default function Home() {
     return (
         <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-            {/* Header Section พร้อมรูป Cover */}
             <View style={styles.headerSection}>
                 <Image
                     source={require('../assets/images/Namtok_Tak.jpg')}
                     style={styles.heroImage}
-                    // แก้ไขตรงนี้ให้รองรับ Web และ Mobile ได้ดีขึ้น
                     resizeMode="cover"
                 />
-
-                {/* กล่องข้อมูลจังหวัดที่ลอยทับรูปขึ้นมา */}
                 <View style={styles.provinceInfo}>
                     <Text style={styles.provinceName}>จังหวัดตาก (Tak)</Text>
                     <Text style={styles.slogan}>"ธรรมชาติน่ายล ภูมิพลเขื่อนใหญ่ พระเจ้าตากเกรียงไกร เมืองไม้และป่างาม"</Text>
@@ -35,7 +30,6 @@ export default function Home() {
                 </View>
             </View>
 
-            {/* ส่วนเมนูเลือกหมวดหมู่ */}
             <View style={styles.menuSection}>
                 <Text style={styles.sectionTitle}>เลือกหมวดหมู่การท่องเที่ยว</Text>
                 <View style={styles.grid}>

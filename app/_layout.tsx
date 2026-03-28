@@ -7,7 +7,6 @@ import {
 import { SplashScreen, Stack } from "expo-router";
 import { useEffect } from 'react';
 
-// ป้องกัน SplashScreen ปิดตัวเองก่อนที่ Font จะโหลดเสร็จ
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
