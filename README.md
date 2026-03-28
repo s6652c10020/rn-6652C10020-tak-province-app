@@ -6,10 +6,7 @@
 
 | หน้าแรก (Home) | รายละเอียด (Detail) | แผนที่ (Map) |
 | :---: | :---: | :---: |
-| <img width="200" alt="Home" src="https://github.com/user-attachments/assets/dccfd6fe-bdf0-4b96-ad11-92e4bd268a69" /> 
-| <img width="200" alt="Detail" src="https://github.com/user-attachments/assets/3f5eb219-b0db-4a93-b0a1-72efe5fad8ee" /> 
-| <img width="200" alt="Map" src="https://github.com/user-attachments/assets/e5ffdeac-9db0-456d-bbdd-2c470035160e" /> 
-|
+| <img width="200" alt="Home" src="https://github.com/user-attachments/assets/dccfd6fe-bdf0-4b96-ad11-92e4bd268a69" /> | <img width="200" alt="Detail" src="https://github.com/user-attachments/assets/3f5eb219-b0db-4a93-b0a1-72efe5fad8ee" /> | <img width="200" alt="Map" src="https://github.com/user-attachments/assets/e5ffdeac-9db0-456d-bbdd-2c470035160e" /> |
 
 ---
 
