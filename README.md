@@ -14,7 +14,9 @@
 
 ภาพรวมของตารางทั้งหมดในระบบ (Table Schema) จาก Supabase Schema Visualizer:
 
-![Database Schema](ใส่_Link_รูปภาพ_Schema_จาก_Supabase)
+<p align="center">
+  <img width="400" alt="Schema Visualizer" src="https://github.com/user-attachments/assets/4281aa18-5d3a-43ac-8d9a-0197af004620" />
+</p>
 
 ### รายละเอียดตาราง (Tables)
 - *tak_places*: เก็บข้อมูลสถานที่ท่องเที่ยว ชื่อ, รายละเอียด, เขต/อำเภอ, พิกัด (Lat/Long), และรูปภาพ
