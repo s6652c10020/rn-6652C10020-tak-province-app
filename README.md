@@ -6,7 +6,10 @@
 
 | หน้าแรก (Home) | รายละเอียด (Detail) | แผนที่ (Map) |
 | :---: | :---: | :---: |
-| ![Home Screen](ใส่_Link_รูปภาพ_หน้าแรก) | ![Detail Screen](ใส่_Link_รูปภาพ_หน้าละเอียด) | ![Map Screen](ใส่_Link_รูปภาพ_หน้าแผนที่) |
+| ![Home Screen](<img width="660" height="1434" alt="Home" src="https://github.com/user-attachments/assets/dccfd6fe-bdf0-4b96-ad11-92e4bd268a69" />)
+| ![Detail Screen](<img width="660" height="1434" alt="Detail" src="https://github.com/user-attachments/assets/3f5eb219-b0db-4a93-b0a1-72efe5fad8ee" />) 
+| ![Map Screen](<img width="660" height="1434" alt="Map" src="https://github.com/user-attachments/assets/e5ffdeac-9db0-456d-bbdd-2c470035160e" />) |
+
 
 ---
 
